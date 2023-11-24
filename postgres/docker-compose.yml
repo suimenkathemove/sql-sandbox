@@ -15,9 +15,10 @@ services:
     volumes:
       # https://hub.docker.com/_/postgres
       - pgdata:/var/lib/postgresql/data
+      - ./init-scripts/:/docker-entrypoint-initdb.d/
     environment:
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: postgres_sandbox
+      POSTGRES_DB: sql_sandbox_postgres
     restart: always
 volumes:
   pgdata:

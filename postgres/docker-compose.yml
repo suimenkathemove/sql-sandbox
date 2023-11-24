@@ -7,6 +7,8 @@ services:
       # dockerfile: Dockerfile
       # https://docs.docker.com/compose/compose-file/compose-file-v3/#target
       target: database
+    image: sql-sandbox-postgres-db
+    container_name: sql-sandbox-postgres-db
     ports:
       # https://docs.docker.com/compose/compose-file/compose-file-v3/#ports
       - "5432:5432"

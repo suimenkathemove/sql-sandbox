@@ -1,0 +1,14 @@
+[tasks.serve]
+script = '''
+docker compose up --build
+'''
+
+[tasks.down]
+script = '''
+docker compose down
+'''
+
+[tasks.db-enter]
+script = '''
+docker exec -it sql-sandbox-postgres-db psql -U postgres
+'''

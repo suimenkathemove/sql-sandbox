@@ -6,6 +6,7 @@ CREATE TABLE table1 (
 
 CREATE TABLE table2 (id UUID PRIMARY KEY, name TEXT);
 
+-- table1の各行に対して、ONの条件にマッチする行をtable2から検索し、結合する
 SELECT
   table1.id,
   table1.name,

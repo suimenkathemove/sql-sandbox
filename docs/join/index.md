@@ -27,8 +27,20 @@ JOIN = INNER JOIN
 
 ### LEFT JOIN
 
+左外部結合(left outer join)
+LEFT JOIN = LEFT OUTER JOIN
+
+左表に対して、結合先が存在しなくても出力するような結合のこと。
+結合先が存在しない場合、結果表に表示される右表の列はすべてNULLになる。
+
 ### RIGHT JOIN
 
+LEFT JOINの右表版。
+
 ### FULL JOIN
+
+左表と右表に対して、結合先が存在しなくても出力するような結合のこと。
+
+MySQLやMariaDBなど、FULL JOINを利用できないDBMSでは、UNIONを使って同等の処理を実現できる。
 
 ## CROSS JOIN

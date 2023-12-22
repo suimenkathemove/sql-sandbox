@@ -16,6 +16,8 @@ DBMSは、左表の各行に対して、以下のSQLを繰り返し実行して�
 SELECT * FROM table2 WHERE <結合条件>
 ```
 
+結合先が複数の場合、その行数に合わせて結合元の行を複製して結合する。
+
 ## INNER JOIN
 
 JOIN = INNER JOIN

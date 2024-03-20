@@ -1,5 +1,18 @@
 # SELECT
 
+- [SELECT](#select)
+  - [DISTINCT](#distinct)
+    - [Use case](#use-case)
+  - [ORDER BY](#order-by)
+    - [列番号を指定した並べ替え](#列番号を指定した並べ替え)
+    - [Use case](#use-case-1)
+  - [Pagination, Paging](#pagination-paging)
+    - [Offset Method](#offset-method)
+      - [LIMIT-OFFSET](#limit-offset)
+      - [OFFSET-FETCH](#offset-fetch)
+    - [Cursor Method](#cursor-method)
+    - [Seek Method](#seek-method)
+
 ## DISTINCT
 
 重複行を除外する。
@@ -43,9 +56,18 @@ SELECT column1, column2 FROM tables
 - ランキング
 - 検索時の並べ替え
 
-## Pagination
+## Pagination, Paging
 
-### Offset Pagination
+### Offset Method
+
+`LIMIT-OFFSET`と`OFFSET-FETCH`の書き方があるが、目的は同じ。
+
+#### LIMIT-OFFSET
+
+```sql
+SELECT <column> FROM <table>
+LIMIT <取得する行数> OFFSET <スキップする行数>
+```
 
 ```sql
 SELECT *
@@ -54,4 +76,23 @@ LIMIT perPage
 OFFSET ((page - 1) * perPage)
 ```
 
-### Cursor Pagination
+#### OFFSET-FETCH
+
+```sql
+SELECT <column> FROM <table>
+ORDER BY <column>
+OFFSET <スキップする行数> ROWS
+FETCH NEXT <取得する行数> ROWS ONLY
+```
+
+比較的新しい構文。
+
+ORDER BYは必須。
+
+### Cursor Method
+
+<!-- TODO -->
+
+### Seek Method
+
+<!-- TODO -->

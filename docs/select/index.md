@@ -11,6 +11,7 @@
       - [LIMIT-OFFSET](#limit-offset)
       - [OFFSET-FETCH](#offset-fetch)
     - [Cursor Method](#cursor-method)
+    - [Offset vs Cursor-Based Pagination](#offset-vs-cursor-based-pagination)
     - [Seek Method](#seek-method)
 
 ## DISTINCT
@@ -95,6 +96,12 @@ Oracle, SQL Serverでサポートされている。
 
 <!-- TODO -->
 
+### Offset vs Cursor-Based Pagination
+
+- <https://medium.com/@oshiryaeva/offset-vs-cursor-based-pagination-which-is-the-right-choice-for-your-project-e46f65db062f>
+- <https://medium.com/@maryam-bit/offset-vs-cursor-based-pagination-choosing-the-best-approach-2e93702a118b>
+
 ### Seek Method
 
-<!-- TODO -->
+- <https://qiita.com/madilloar/items/b4e786a932ef9d4551b9>
+- <https://qiita.com/madilloar/items/5625e61cf3e348d08ef8>

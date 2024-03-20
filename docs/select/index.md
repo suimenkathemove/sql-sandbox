@@ -47,9 +47,13 @@ SELECT column1, column2 FROM tables
 
 ## Pagination
 
+### Offset Pagination
+
 ```sql
 SELECT *
 FROM tables
 LIMIT perPage
 OFFSET ((page - 1) * perPage)
 ```
+
+### Cursor Pagination

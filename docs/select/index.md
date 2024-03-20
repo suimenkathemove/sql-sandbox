@@ -1,4 +1,6 @@
-# Pagination
+# SELECT
+
+## Pagination
 
 ```sql
 SELECT *

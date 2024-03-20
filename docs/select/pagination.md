@@ -1,18 +1,24 @@
 # Pagination, Paging
 
 - [Pagination, Paging](#pagination-paging)
-  - [Offset Method](#offset-method)
+  - [Offset-Based](#offset-based)
     - [LIMIT-OFFSET](#limit-offset)
     - [OFFSET-FETCH](#offset-fetch)
-  - [Cursor Method](#cursor-method)
+  - [Cursor-Based](#cursor-based)
   - [Offset vs Cursor-Based Pagination](#offset-vs-cursor-based-pagination)
   - [Seek Method](#seek-method)
+    - [参考](#参考)
+  - [With Window-Functions](#with-window-functions)
+  - [参考](#参考-1)
 
-## Offset Method
+## Offset-Based
 
 `LIMIT-OFFSET`と`OFFSET-FETCH`の書き方があるが、目的は同じ。
 
 1件目から取得したい場合は0を指定するか、DBMSによってはOFFSET句自体を省略できる。
+
+OFFSETが大きくなるとパフォーマンスが悪くなる。
+行数が変わるとページがずれる。
 
 ### LIMIT-OFFSET
 
@@ -41,7 +47,7 @@ FETCH NEXT <取得する行数> ROWS ONLY
 
 Oracle, SQL Serverでサポートされている。
 
-## Cursor Method
+## Cursor-Based
 
 <!-- TODO -->
 
@@ -52,5 +58,20 @@ Oracle, SQL Serverでサポートされている。
 
 ## Seek Method
 
+前ページの最終行をキーにして問い合わせを行う。
+そのため、テーブルの後の方の行でもパフォーマンスが悪くならない。
+
+ORDER BY句にはユニークキーを含める必要がある。
+
+### 参考
+
 - <https://qiita.com/madilloar/items/b4e786a932ef9d4551b9>
 - <https://qiita.com/madilloar/items/5625e61cf3e348d08ef8>
+
+## With Window-Functions
+
+<!-- TODO -->
+
+## 参考
+
+- <https://use-the-index-luke.com/ja/sql/partial-results>

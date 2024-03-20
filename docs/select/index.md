@@ -62,12 +62,16 @@ SELECT column1, column2 FROM tables
 
 `LIMIT-OFFSET`と`OFFSET-FETCH`の書き方があるが、目的は同じ。
 
+1件目から取得したい場合は0を指定するか、DBMSによってはOFFSET句自体を省略できる。
+
 #### LIMIT-OFFSET
 
 ```sql
 SELECT <column> FROM <table>
 LIMIT <取得する行数> OFFSET <スキップする行数>
 ```
+
+MySQL, PostgreSQL, SQLiteでサポートされている。
 
 ```sql
 SELECT *
@@ -85,9 +89,7 @@ OFFSET <スキップする行数> ROWS
 FETCH NEXT <取得する行数> ROWS ONLY
 ```
 
-比較的新しい構文。
-
-ORDER BYは必須。
+Oracle, SQL Serverでサポートされている。
 
 ### Cursor Method
 

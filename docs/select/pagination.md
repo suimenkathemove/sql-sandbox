@@ -2,9 +2,15 @@
 
 - [Pagination, Paging](#pagination-paging)
   - [Offset-Based](#offset-based)
+    - [input](#input)
+    - [Pros](#pros)
+    - [Cons](#cons)
     - [LIMIT-OFFSET](#limit-offset)
     - [OFFSET-FETCH](#offset-fetch)
   - [Cursor-Based](#cursor-based)
+    - [input](#input-1)
+    - [Pros](#pros-1)
+    - [Cons](#cons-1)
   - [Offset vs Cursor-Based Pagination](#offset-vs-cursor-based-pagination)
   - [Seek Method](#seek-method)
     - [参考](#参考)
@@ -16,6 +22,21 @@
 `LIMIT-OFFSET`と`OFFSET-FETCH`の書き方があるが、目的は同じ。
 
 1件目から取得したい場合は0を指定するか、DBMSによってはOFFSET句自体を省略できる。
+
+### input
+
+```ts
+interface Input {
+  "perPage": number,
+  "page": number,
+}
+```
+
+### Pros
+
+実装が簡単。
+
+### Cons
 
 OFFSETが大きくなるとパフォーマンスが悪くなる。
 行数が変わるとページがずれる。
@@ -49,7 +70,17 @@ Oracle, SQL Serverでサポートされている。
 
 ## Cursor-Based
 
+### input
+
 <!-- TODO -->
+
+### Pros
+
+大量のデータに対して効果的。
+
+### Cons
+
+実装が複雑になりやすい。
 
 ## Offset vs Cursor-Based Pagination
 

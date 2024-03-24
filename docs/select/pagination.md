@@ -15,6 +15,7 @@
   - [Seek Method](#seek-method)
     - [参考](#参考)
   - [With Window-Functions](#with-window-functions)
+    - [例](#例)
   - [参考](#参考-1)
 
 ## Offset-Based
@@ -101,7 +102,30 @@ ORDER BY句にはユニークキーを含める必要がある。
 
 ## With Window-Functions
 
-<!-- TODO -->
+SQLiteではサポートされていない。
+
+### 例
+
+```sql
+SELECT
+  *
+FROM
+  (
+    SELECT
+      *,
+      ROW_NUMBER() OVER (
+        ORDER BY
+          <column> DESC
+      ) <RN>
+    FROM
+      table
+  ) <TMP>
+WHERE
+  <RN> >= <from>
+  AND <RN> <= <to>
+```
+
+ROW_NUMBER関数は、OVER句の定義順に並べ替え、連番を付与する。
 
 ## 参考
 

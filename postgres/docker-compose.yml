@@ -11,7 +11,7 @@ services:
     container_name: sql-sandbox-postgres-db
     ports:
       # https://docs.docker.com/compose/compose-file/compose-file-v3/#ports
-      - "5000:5432"
+      - "5555:5432"
     volumes:
       # https://hub.docker.com/_/postgres
       - pgdata:/var/lib/postgresql/data

@@ -11,7 +11,7 @@ GIN indexは文書中の単語の位置を保持している。
 
 postgresql.confに以下を追加する。
 
-```
+```conf
 shared_preload_libraries = 'pg_bigm'
 ```
 
